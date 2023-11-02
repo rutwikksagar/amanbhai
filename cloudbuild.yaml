@@ -3,7 +3,7 @@ steps:
     args: ['clone', 'https://github.com/rutwiksquareops/amanbhai.git', '/workspace/source']
 
   - name: 'gcr.io/cloud-builders/gsutil'
-    args: ['-m', 'cp', '-r', '/workspace/source/wordpress', 'gs://bucket-for-artifact/artifacts-directory']
+    args: ['-m', 'cp', '-r', '/workspace/source/wordpress', 'gs://bucket-for-artifact/']
 
   - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
