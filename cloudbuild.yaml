@@ -1,0 +1,14 @@
+steps:
+  - name: 'gcr.io/cloud-builders/git'
+    args: ['clone', 'https://github.com/rutwiksquareops/amanbhai.git', '/workspace/source']
+
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args: ['-m', 'cp', '-r', '/workspace/source/wordpress', 'gs://bucket-for-artifact/artifacts-directory']
+
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        echo "Hello, world!"
+
